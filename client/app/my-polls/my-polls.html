@@ -1,0 +1,8 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+    <h3>My Polls</h3>
+    <div ng-repeat="poll in polls | filter:{creator: getCurrentUser().name}">
+        <a ng-href="/view/{{poll._id}}"><h3>{{poll.title}}</h3></a>
+    </div>
+</div>

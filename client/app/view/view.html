@@ -1,0 +1,14 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+        <h3>{{poll.title}}</h3>
+        <form ng-submit="submitForm()">
+
+            <div ng-repeat="answer in poll.answers">
+                <label><input type="radio" name="option" ng-model="radioData.index" value="{{$index}}"/>
+                    {{ answer.value }} - {{ answer.votes }} Votes
+                </label>
+            </div>
+            <button class="btn btn-success" type="submit">Vote!</button>
+        </form>
+</div>
