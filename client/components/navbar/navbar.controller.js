@@ -4,14 +4,17 @@ angular.module('angFullstackCssApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
       'title': 'Home',
-      'link': '/'
+      'link': '/',
+      'requiresLogin': false
     }, {
         'title': 'Create a New Poll',
-        'link': 'create-poll'
+        'link': 'create-poll',
+        'requiresLogin': true
       },
       {
         'title': 'My Polls',
-        'link': 'my-polls'
+        'link': 'my-polls',
+        'requiresLogin': true
       }];
 
     $scope.isCollapsed = true;

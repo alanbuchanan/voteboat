@@ -8,15 +8,17 @@ angular.module('angFullstackCssApp')
             $scope.radioData = {
                 index: 0
             };
-            $scope.viewPoll = true;
-
-            $scope.alreadyVoted = false;
 
             $scope.submitForm = function () {
-                $scope.alreadyVoted = true;
                 console.log($scope.radioData.index);
                 $scope.poll.answers[$scope.radioData.index].votes += 1;
+                console.log('scope poll answers:- ', $scope.poll.answers);
+                console.log('scope poll answers[index]:- ', $scope.poll.answers[$scope.radioData.index]);
+                console.log('votes:- ', $scope.poll.answers[$scope.radioData.index].votes);
                 // Change database entry here
+                $http.put('/api/polls/' + $routeParams._id, {answers: $scope.poll.answers}).success(function () {
+                    console.log('success');
+                });
             };
         });
     });

@@ -18,6 +18,14 @@ angular.module('angFullstackCssApp')
         $scope.getCurrentUser = Auth.getCurrentUser;
 
         $scope.savePoll = function () {
+
+            $scope.poll.answers.forEach(function (answer, index) {
+                if(answer.value === "" || answer.value === undefined) {
+                    $scope.poll.answers.splice(index, 1);
+                    console.log($scope.poll.answers);
+                }
+            });
+
             $scope.poll.creator = $scope.getCurrentUser().name;
             $http.post('/api/polls', $scope.poll).then(function () {
               $location.path('/my-polls');

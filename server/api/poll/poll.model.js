@@ -10,6 +10,6 @@ var PollSchema = new Schema({
         value: String,
         votes: Number
     }]
-});
+}, { versionKey: false });
 
 module.exports = mongoose.model('Poll', PollSchema);
