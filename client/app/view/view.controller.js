@@ -16,7 +16,7 @@ angular.module('angFullstackCssApp')
             var render = function () {
                 data = [];
 
-                console.log('rendering...', poll);
+                //console.log('rendering...', poll);
 
                 poll.answers.forEach(function (answer, index) {
                     var objToAppend = {};
@@ -51,7 +51,7 @@ angular.module('angFullstackCssApp')
                 console.log($scope.radioData.index);
                 $scope.poll.answers[$scope.radioData.index].votes += 1;
                 $http.put('/api/polls/' + $routeParams._id, {answers: $scope.poll.answers}).success(function () {
-                    console.log('success');
+                    //console.log('success');
                     render();
                 });
 

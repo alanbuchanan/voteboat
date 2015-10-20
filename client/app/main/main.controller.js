@@ -7,7 +7,7 @@ angular.module('angFullstackCssApp')
         $scope.isAdmin = Auth.isAdmin;
 
         $http.get('/api/polls').success(function (polls) {
-            console.log(polls);
+            //console.log(polls);
             $scope.polls = polls;
         });
 
@@ -20,7 +20,7 @@ angular.module('angFullstackCssApp')
         };
 
         $scope.deletePoll = function (index, id) {
-            console.log(index);
+            //console.log(index);
 
             $http.delete('/api/polls/' + id).success(function (poll) {
                 $scope.polls.splice(index, 1);

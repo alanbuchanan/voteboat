@@ -29,7 +29,7 @@ angular.module('angFullstackCssApp')
             $scope.poll.answers.forEach(function (answer, index) {
                 if(answer.value === "" || answer.value === undefined) {
                     $scope.poll.answers.splice(index, 1);
-                    console.log($scope.poll.answers);
+                    //console.log($scope.poll.answers);
                 }
             });
 

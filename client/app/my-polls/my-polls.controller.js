@@ -5,10 +5,10 @@ angular.module('angFullstackCssApp')
 
         $scope.getCurrentUser = Auth.getCurrentUser;
 
-        console.log('user: ' + $scope.getCurrentUser().name);
+        //console.log('user: ' + $scope.getCurrentUser().name);
 
         $http.get('/api/polls').success(function (polls) {
-            console.log(polls);
+            //console.log(polls);
 
             $scope.polls = [];
 
@@ -18,7 +18,7 @@ angular.module('angFullstackCssApp')
                 }
             });
 
-            console.log($scope.polls);
+            //console.log($scope.polls);
 
         });
 
@@ -30,7 +30,7 @@ angular.module('angFullstackCssApp')
         $scope.currentPoll = {};
 
         $scope.deletePoll = function (index, id) {
-            console.log(index);
+            //console.log(index);
             
             $http.delete('/api/polls/' + id).success(function (poll) {
                 $scope.polls.splice(index, 1);
@@ -38,7 +38,7 @@ angular.module('angFullstackCssApp')
         };
 
         $scope.submitForm = function (){
-            console.log($scope.radioData.index);
+            //console.log($scope.radioData.index);
             $scope.poll.answers[$scope.radioData.index].votes += 1;
             $scope.poll.save();
         };
