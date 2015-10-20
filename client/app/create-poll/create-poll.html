@@ -14,7 +14,7 @@
       <button class="btn" ng-click="addOptionField()">+</button>
     </div>
 
-    <input type="submit" class="btn btn-primary" ng-click="savePoll()" value="Save"/>
+    <input ng-disabled="isInvalid()" type="submit" class="btn btn-primary" ng-click="savePoll()" value="Save"/>
   </form>
 </div>
 </div>

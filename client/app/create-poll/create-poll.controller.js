@@ -17,6 +17,13 @@ angular.module('angFullstackCssApp')
 
         $scope.getCurrentUser = Auth.getCurrentUser;
 
+
+        $scope.isInvalid = function () {
+            return $scope.poll.title === '' ||
+                $scope.poll.answers[0].value.length === 0 ||
+                $scope.poll.answers[1].value.length === 0;
+        }
+
         $scope.savePoll = function () {
 
             $scope.poll.answers.forEach(function (answer, index) {

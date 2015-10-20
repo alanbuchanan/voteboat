@@ -13,7 +13,7 @@
                         Votes)</em></span>
                 </label>
             </div>
-            <button ng-show="isLoggedIn()" class="btn btn-success" type="submit">Vote!</button>
+            <button ng-disabled="alreadyVoted" ng-show="isLoggedIn()" class="btn btn-success" type="submit">Vote!</button>
         </form>
         <a href="login">
             <button ng-hide="isLoggedIn()" class="btn btn-primary" type="submit">Login or Sign up to Vote!</button>
