@@ -3,10 +3,12 @@
 angular.module('angFullstackCssApp')
     .controller('ViewCtrl', function ($scope, $routeParams, $http, Auth) {
 
+        //$('input[name="option"]').prop('checked', false);
+
         $http.get('/api/polls/' + $routeParams._id).success(function (poll) {
             $scope.poll = poll;
             $scope.radioData = {
-                index: 0
+                index: null
             };
 
             var colors = ["#81F0E5", "#78C091", "#6E9075", "#5B6057", 'red', 'blue', 'green', 'yellow'];
@@ -34,7 +36,7 @@ angular.module('angFullstackCssApp')
 
             render();
 
-            console.log($scope.poll);
+            //console.log($scope.poll);
 
             $scope.isLoggedIn = Auth.isLoggedIn;
 
@@ -48,7 +50,7 @@ angular.module('angFullstackCssApp')
 
             $scope.submitForm = function () {
             $scope.alreadyVoted = true;
-                console.log($scope.radioData.index);
+                //console.log($scope.radioData.index);
                 $scope.poll.answers[$scope.radioData.index].votes += 1;
                 $http.put('/api/polls/' + $routeParams._id, {answers: $scope.poll.answers}).success(function () {
                     //console.log('success');

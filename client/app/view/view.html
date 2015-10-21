@@ -8,7 +8,7 @@
         <form ng-submit="submitForm()">
 
             <div ng-repeat="answer in poll.answers">
-                <label><input type="radio" name="option" ng-model="radioData.index" value="{{$index}}"/>
+                <label><input type="radio" name="option" ng-model="radioData.index" value="{{$index}}" ng-true-value="false"/>
                     <span id="answer-value"></span>{{ answer.value }} <span id="answer-votes"><em>({{ answer.votes }}
                         Votes)</em></span>
                 </label>
