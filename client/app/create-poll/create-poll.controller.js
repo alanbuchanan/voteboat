@@ -2,6 +2,9 @@
 
 angular.module('angFullstackCssApp')
     .controller('CreatePollCtrl', function ($scope, $http, $location, Auth) {
+
+        $scope.isLoggedIn = Auth.isLoggedIn;
+
         $scope.poll = {};
 
         $scope.poll.title = '';
@@ -22,7 +25,7 @@ angular.module('angFullstackCssApp')
             return $scope.poll.title === '' ||
                 $scope.poll.answers[0].value.length === 0 ||
                 $scope.poll.answers[1].value.length === 0;
-        }
+        };
 
         $scope.savePoll = function () {
 
